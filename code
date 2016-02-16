@@ -1,0 +1,120 @@
+"""
+    Name: Katie Finlayson
+
+    Date Modified: 12/4/2015
+
+    Program: Homework - Monster GAME
+    
+    1) Create experience points for player (25 points)
+        Player should gain 10 experience points by defeating monster
+        Player should level [up] every time they reach 20 experience points
+    2) Create three items the monster could give after being defeated (or it will drop nothing) (25 points)
+        It should drop nothing (50%)
+        It should drop a shinny dagger (+1 damage) (20%)
+        It should drop a shield (-1 damage) (20%)
+        It should drop a sword (+10 damage) (10%)
+        Once an item drops do not drop it again
+
+    3) Create a save file so that every time you play you can save your progress (25 points)
+    4) BONUS POINTS (25 points) 
+        1. Be creative and add stuff
+
+"""
+    
+import random
+import os 
+
+myNumber = random.randint(1,20) #set variables and create menu to store the game in
+monsterNumber = 0 
+my_health = 100
+monster_health = 100
+experiencePoints = 0
+level = 0
+itemDrop = ["dagger", "shield", "sword"]
+dropRange = random.randint(1,100)
+damage = 0
+shield = 0
+weapon = 0
+x = 0
+y = 0
+
+if os.path.exists("monsterSavefile.txt"):           #We use os for accessing the file system - os module
+    file = open("monsterSavefile.txt", "r")         #Open file to write and save data
+    temp = [line.strip("\n") for line in file]      #Good use of list comprehension
+    experiencePoints = int(temp[0])
+    level = int(temp[1])
+    #itemDrop = "false"
+    #print(itemDrop[0])
+    file.close()
+else:
+    experiencePoints = 0
+    level = 0
+    itemDrop = ["dagger", "shield", "sword"]
+
+choice = "notq"
+
+while choice != "q":
+    monster_health = 100
+    my_health = 100
+    
+    while x < my_health and y < monster_health: 
+        if myNumber == 1: #we don't do anything here because we have one consider the shield and sword out of ones hand
+            my_health -= 20              
+            myNumber = 0
+            monsterNumber = 20          
+
+        elif myNumber == 20:                
+            monster_health -= 20 + damage #monster takes the damage
+            myNumber = 20 + damage   #adds in the damage into the current myNumber              
+            monsterNumber = 0
+
+        else:
+            monsterNumber = 20 - myNumber + shield  #the shield saves the you a point                                     
+            my_health = my_health - monsterNumber                                   
+            monster_health = monster_health - myNumber + damage #monsters health - your current health + whatever the extra damage levels
+            myNumber += damage #I take damage
+                                                                                        
+        print(" You hit the monster for:", myNumber,  "points of damage", "\n",
+            "The monster hits you for:", monsterNumber, "points of damage", "\n",  
+            "Your current life points are: ", my_health, "\n",
+            "The monsters life points are:", monster_health, "\n")               
+                
+        myNumber = random.randint(1,20)    #pick a random number for basic gameplay
+
+    if my_health <= 0:
+        print("You are a loser, the monster might decide to eat you... unless it is friendly... ") #if-else statements for loose or win (1-20)
+            
+    elif monster_health <= 0:
+        experiencePoints += 10 #we need to tally experience points and levelUP
+        if experiencePoints%20 == 0:
+            level += 1
+            
+        if dropRange > 50 and dropRange <= 70: #item drop statements
+            itemDrop[0] = "false"
+            damage = 1
+            print("You have received the DAGGER!!!")
+
+        elif dropRange > 70 and dropRange <= 90:
+            itemDrop[1] = "false"
+            shield = 1
+            print("You have received the SHIELD!!!")
+
+        elif dropRange > 90 and dropRange <= 100:
+            itemDrop[2] = "false"
+            damage = 10
+            print("You have recieved the SWORD!!!")
+        
+        print("Your experience points are: ", experiencePoints)
+        print("Your current level: ", level)
+        print("You win!!!")
+
+        report = open("monsterSavefile.txt", "w") #write the file inside the loop so it has ALL the information needed
+        report.write(str(experiencePoints)+ "\n" + str(level) + "\n" + str(itemDrop))
+        report.close()
+                
+    elif my_health <= 0 and monster_health <= 0:
+        print("You both fall in combat") #10-30 add/subt help?
+
+    choice = input("\nPress ENTER to continue or type 'q' to quit: ") #to state whether or not to continue or stop while loop
+
+
