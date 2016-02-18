@@ -4,20 +4,6 @@
     Date Modified: 12/4/2015
 
     Program: Homework - Monster GAME
-    
-    1) Create experience points for player (25 points)
-        Player should gain 10 experience points by defeating monster
-        Player should level [up] every time they reach 20 experience points
-    2) Create three items the monster could give after being defeated (or it will drop nothing) (25 points)
-        It should drop nothing (50%)
-        It should drop a shinny dagger (+1 damage) (20%)
-        It should drop a shield (-1 damage) (20%)
-        It should drop a sword (+10 damage) (10%)
-        Once an item drops do not drop it again
-
-    3) Create a save file so that every time you play you can save your progress (25 points)
-    4) BONUS POINTS (25 points) 
-        1. Be creative and add stuff
 
 """
     
