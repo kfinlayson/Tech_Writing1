@@ -11,31 +11,47 @@ Challenges included learning basic loops such as dropping objects during the gam
 Module 
 ================================================
 The 'os' module was used to save the file we stored the game in. 
-The 'random' module was used to randomize the numbers that we use throughout the game. The primary reason for using the random module was to initialize the game and to regulate variable for dropRange which is in charge of dropping objects for the player to get damage from. 
+The 'random' module was used to randomize the numbers that we use throughout the game. The primary reason for using the random module was to initialize the game scores and to regulate variable for dropRange which is in charge of dropping objects for the player to get damage from. 
+You can see below how both the 'random' and 'os' module's are initialized and used in the program below.
 
 ```
 import random
 import os 
 
-myNumber = random.randint(1,20) #set variables and create menu to store the game in
+myNumber = random.randint(1,20)                 #player's status based on random choice between 1 and 20
 monsterNumber = 0 
 my_health = 100
 monster_health = 100
 experiencePoints = 0
 level = 0
 itemDrop = ["dagger", "shield", "sword"]
-dropRange = random.randint(1,100)
+dropRange = random.randint(1,100)               #how often the items (dagger, shield, and sword) are dropped.
 damage = 0
 shield = 0
 weapon = 0
 x = 0
 y = 0
+
+if os.path.exists("monsterSavefile.txt"):       #We use os for accessing the file system - os module
+    file = open("monsterSavefile.txt", "r")     #Open file to write and save data    
+    temp = [line.strip("\n") for line in file]      
+    experiencePoints = int(temp[0])
+    level = int(temp[1])
+    file.close()
+else:
+    experiencePoints = 0
+    level = 0
+    itemDrop = ["dagger", "shield", "sword"]
+
+choice = "notq"
 ```
 
+Game Creation Challenges
+------------------------
+Challenges included learning basic loops such as dropping objects during the game and getting the file to save all of the game's previous progress. Both took time, but were implemented into the game so that it accomplishes both of these tasks.
 
-
-Notes:
----------
+Notes
+-----
 * There were NO FUNCTIONS used in this game only basic module's and looping structures. 
 * This is a basic program that runs the game without hands on interaction.
 
