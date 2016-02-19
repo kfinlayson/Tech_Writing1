@@ -57,8 +57,8 @@ Challenges included learning basic loops such as dropping objects during the gam
 
 Notes
 -----
-* There were NO FUNCTIONS defined within this game only basic module's and looping structures. 
-* All of the loops and if statements in this game are essential to creating fair gameplay. The first set of if-statements control the overall player/monster scores while the second set of statments maintain the itemDrop variable with it's content.
+* There were NO FUNCTIONS defined within this game only basic module's and loops. 
+* All of the loops and if-statements in this game are essential to creating fair gameplay. The first set of if-statements control the overall player/monster scores while the second set of statments maintain the itemDrop variable with it's content.
 * This is a basic program that runs the game without hands on interaction.
 
 
