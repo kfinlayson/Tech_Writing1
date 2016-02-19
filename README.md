@@ -8,7 +8,7 @@ Game Creation Challenges
 ------------------------
 Challenges included learning basic loops such as dropping objects during the game and getting the file to save all of the game's previous progress.
 
-Module 
+Modules 
 ================================================
 The 'os' module was used to save the file we stored the game in. 
 The 'random' module was used to randomize the numbers that we use throughout the game. The primary reason for using the random module was to initialize the game scores and to regulate variable for dropRange which is in charge of dropping objects for the player to get damage from. 
@@ -60,7 +60,7 @@ Challenges included learning basic loops such as dropping objects during the gam
 
 Notes
 -----
-* There were NO FUNCTIONS used in this game only basic module's and looping structures. 
+* There were NO FUNCTIONS defined within this game only basic module's and looping structures. 
 * This is a basic program that runs the game without hands on interaction.
 
 
