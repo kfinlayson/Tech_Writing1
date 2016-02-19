@@ -24,7 +24,7 @@ weapon = 0
 x = 0
 y = 0
 
-if os.path.exists("monsterSavefile.txt"):           #We use os for accessing the file system - os module
+if os.path.exists("monsterSavefile.txt"):           #Use os for accessing the file system - os module
     file = open("monsterSavefile.txt", "r")         #Open file to write and save data
     temp = [line.strip("\n") for line in file]      #Good use of list comprehension
     experiencePoints = int(temp[0])
@@ -44,14 +44,14 @@ while choice != "q":
     my_health = 100
     
     while x < my_health and y < monster_health: 
-        if myNumber == 1: #we don't do anything here because we have one consider the shield and sword out of ones hand
+        if myNumber == 1: 
             my_health -= 20              
             myNumber = 0
             monsterNumber = 20          
 
         elif myNumber == 20:                
-            monster_health -= 20 + damage #monster takes the damage
-            myNumber = 20 + damage   #adds in the damage into the current myNumber              
+            monster_health -= 20 + damage   #monster takes the damage
+            myNumber = 20 + damage          #adds in the damage into the current myNumber              
             monsterNumber = 0
 
         else:
@@ -65,13 +65,13 @@ while choice != "q":
             "Your current life points are: ", my_health, "\n",
             "The monsters life points are:", monster_health, "\n")               
                 
-        myNumber = random.randint(1,20)    #pick a random number for basic gameplay
+        myNumber = random.randint(1,20)    
 
     if my_health <= 0:
-        print("You are a loser, the monster might decide to eat you... unless it is friendly... ") #if-else statements for loose or win (1-20)
+        print("You are a loser, the monster might decide to eat you... unless it is friendly... ") 
             
     elif monster_health <= 0:
-        experiencePoints += 10 #we need to tally experience points and levelUP
+        experiencePoints += 10                  #need to tally experience points and levelUP
         if experiencePoints%20 == 0:
             level += 1
             
@@ -99,8 +99,8 @@ while choice != "q":
         report.close()
                 
     elif my_health <= 0 and monster_health <= 0:
-        print("You both fall in combat") #10-30 add/subt help?
+        print("You both fall in combat") 
 
-    choice = input("\nPress ENTER to continue or type 'q' to quit: ") #to state whether or not to continue or stop while loop
+    choice = input("\nPress ENTER to continue or type 'q' to quit: ") 
 
 
