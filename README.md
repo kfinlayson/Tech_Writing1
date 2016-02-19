@@ -8,7 +8,7 @@ The game depends on how well the player plays if he plays well he can receive ex
 Modules 
 ================================================
 The 'os' module was used to save the file we stored the game in. 
-The 'random' module was used to randomize the numbers that we use throughout the game. The primary reason for using the random module was to initialize the game scores and to regulate variable for dropRange which is in charge of dropping objects for the player to get damage from. The 'random' module was called into the program several times and even called within the main loop to maintain the game.
+-The 'random' module was used to randomize the numbers that we use throughout the game. The primary reason for using the random module was to initialize the game scores and to regulate the variable for dropRange which drops objects for the player to gain experience or damage from. The 'random' module was called into the program several times and even called within the main loop to maintain the game.
 You can see below how both the 'random' and 'os' module's are initialized and used in the program below.
 
 ```
