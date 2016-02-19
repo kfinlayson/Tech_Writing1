@@ -46,7 +46,7 @@ choice = "notq"
 At the end of the file I made sure to save it in the loop so that ALL the information needed was saved into the file:
 
 ```
-report = open("monsterSavefile.txt", "w") #write the file inside the loop so it has ALL the information needed
+report = open("monsterSavefile.txt", "w")
 report.write(str(experiencePoints)+ "\n" + str(level) + "\n" + str(itemDrop))
 report.close()
 ```
