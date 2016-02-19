@@ -2,7 +2,8 @@
 Program Description
 =================================================
 This is a basic game written in Python where the player fights a monster. The entire game is a written into a file that loops its intructions until the either the monster or the player reach zero or below in point count. 
-Both the player and the monster fight for their points and avoid damage until the game ends (or when one of the player's scores drop below zero). Depending on how well the player plays he can receive experience points which will help him gain an advantage on the monster by winning either a dagger, shield, or sword. 
+Both the player and the monster fight for their points and avoid damage until the game ends (or when one of the player's scores drop below zero). 
+The game depends on how well the player plays if he plays well he can receive experience points which will help him gain an advantage on the monster by winning either a dagger, shield, or sword. The experience points can be key to winning the game.
 
 Modules 
 ================================================
