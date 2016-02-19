@@ -46,6 +46,14 @@ else:
 choice = "notq"
 ```
 
+At the end of the file I made sure to save it in the loop so that ALL the information needed was saved into the file:
+
+```
+report = open("monsterSavefile.txt", "w") #write the file inside the loop so it has ALL the information needed
+report.write(str(experiencePoints)+ "\n" + str(level) + "\n" + str(itemDrop))
+report.close()
+```
+
 Game Creation Challenges
 ------------------------
 Challenges included learning basic loops such as dropping objects during the game and getting the file to save all of the game's previous progress. Both took time, but were implemented into the game so that it accomplishes both of these tasks.
