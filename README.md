@@ -53,7 +53,7 @@ report.close()
 
 Game Creation Challenges
 ------------------------
-Challenges included learning basic loops such as dropping objects during the game and getting the file to save all of the game's previous progress. Both took time, but were implemented into the game so that it accomplishes both of these tasks.
+Challenges included learning basic loops such as dropping objects during the game and getting the file to save all of the game's previous progress.
 
 Notes
 -----
