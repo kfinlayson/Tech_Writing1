@@ -11,7 +11,7 @@ Module
 I imported the 'os' module to save the file we stored the game in. 
 The random module was used to randomize the numbers that we use throughout the game. The primary reason for using the random module was to initialize the game and to regulate variable for dropRange which is in charge of dropping objects for the player to get damage from. 
 
-``import random
+```\import random
 import os 
 
 myNumber = random.randint(1,20) #set variables and create menu to store the game in
@@ -26,7 +26,8 @@ damage = 0
 shield = 0
 weapon = 0
 x = 0
-y = 0``
+y = 0
+```
 
 Notes:
 ---------
